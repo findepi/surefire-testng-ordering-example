@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="a-suite" verbose="1" parallel="methods" thread-count="2">
+   <!-- <test name="all">
+        <packages>
+            <package name="localhost.*" />
+        </packages>
+    </test>-->
+    <!--
+    <test name="t1"><classes><class name="localhost.surefiretestngordering.TestClass1" /></classes></test>
+    <test name="t2"><classes><class name="localhost.surefiretestngordering.TestClass2" /></classes></test>
+    <test name="t3"><classes><class name="localhost.surefiretestngordering.TestClass3" /></classes></test>
+    <test name="t4"><classes><class name="localhost.surefiretestngordering.TestClass4" /></classes></test>
+-->
+
+    <test name="t">
+        <classes>
+            <class name="localhost.surefiretestngordering.TestClass1" />
+            <class name="localhost.surefiretestngordering.TestClass2" />
+            <class name="localhost.surefiretestngordering.TestClass3" />
+            <class name="localhost.surefiretestngordering.TestClass4" />
+        </classes>
+    </test>
+</suite>

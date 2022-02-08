@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.airlift</groupId>
+        <artifactId>airbase</artifactId>
+        <version>112</version>
+    </parent>
+
+    <groupId>localhost</groupId>
+    <artifactId>surefire-testng-ordering</artifactId>
+    <name>surefire-testng-ordering</name>
+
+    <properties>
+        <project.build.targetJdk>11</project.build.targetJdk>
+
+        <air.check.skip-all>true</air.check.skip-all>
+        <air.test.parallel>methods</air.test.parallel>
+        <air.test.thread-count>2</air.test.thread-count>
+
+        <dep.testng.version>7.3.0</dep.testng.version>
+
+<!--        <air.test.jvm.additional-arguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8000</air.test.jvm.additional-arguments>-->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5-2-SNAPSHOT</version>
+               <!-- <configuration combine.self="append">
+                    <parallel>${air.test.parallel}</parallel>
+                    <threadCount>${air.test.thread-count}</threadCount>
+
+&lt;!&ndash;                    <suiteXmlFiles>
+                        &lt;!&ndash;<suiteXmlFile>testng.xml</suiteXmlFile>&ndash;&gt;
+                        <suiteXmlFile>aaa.xml</suiteXmlFile>
+&lt;!&ndash;                        <suiteXmlFile>testng-suite1.xml</suiteXmlFile>&ndash;&gt;
+&lt;!&ndash;                        <suiteXmlFile>testng-suite2.xml</suiteXmlFile>&ndash;&gt;
+&lt;!&ndash;                        <suiteXmlFile>testng-suite3.xml</suiteXmlFile>&ndash;&gt;
+&lt;!&ndash;                        <suiteXmlFile>testng-suite4.xml</suiteXmlFile>&ndash;&gt;
+                    </suiteXmlFiles>&ndash;&gt;
+                </configuration>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,4 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suite4" verbose="1" parallel="methods" thread-count="2">
+    <test name="t4"><classes><class name="localhost.surefiretestngordering.TestClass4" /></classes></test>
+</suite>
